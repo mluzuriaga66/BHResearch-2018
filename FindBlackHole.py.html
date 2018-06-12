@@ -1,0 +1,40 @@
+
+# coding: utf-8
+
+# In[4]:
+
+
+import pynbody
+import matplotlib.pylab as plt
+plt.switch_backend("agg")
+
+#im loading the snapshot
+s = pynbody.load('/mnt/storm/storm.cosmo25cmb.4096g5HbwK1BH.004096/storm.cosmo25cmb.4096g5HbwK1BH.004096')   
+
+#save it by ctrl-x-s 'to save work'
+
+
+
+# gonna start loading the halo'galaxies' now
+h = s.halos()
+
+#halo we need to look at is #2
+pynbody.analysis.angmom.faceon(h[2])
+
+#^^ its centering on the halo that i have picked which is 3 at the moment
+#and giving it a shape of a disk almost like a dinner plate
+
+s.physical_units()
+
+#^^ making all the data into a certain amount by mul everything for me
+
+
+#finding the black hole using function
+def findBH(s):
+    BHfilter = pynbody.filt.LowPass('tform',0.0)
+    BH = s.stars[BHfilter]
+    return BH
+    
+#finding what is the radius of the Black Hole at that time
+pynbody.analysis.halo.center(h[2],mode='hyb')
+
