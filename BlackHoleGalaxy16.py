@@ -1,6 +1,4 @@
  
-# coding: utf-8
-
 # In[4]:
 import pynbody
 import matplotlib.pylab as plt
@@ -55,10 +53,5 @@ for halo in BHhalos:
     print BHz
     #the .5 is the square root , this is the distance formula
     distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
+    print 'this is the distance :'
     print distance
-
-
-
-
-
-
