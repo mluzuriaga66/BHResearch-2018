@@ -16,14 +16,14 @@ s.physical_units()
 h = s.halos()
 
 #function to find black hole
-def findBH(snap):
+def findBH(s):
     BHfilter = pynbody.filt.LowPass('tform',0.0)
-    BH = snap.stars[BHfilter]
+    BH = s.stars[BHfilter]
     return BH
 
 #function to find the halos that the galaxy is in
-def findBHhalos(snap):
-    BH = findBH(snap)
+def findBHhalos(s):
+    BH = findBH(s)
     BHhalos = BH['amiga.grp']
     return BHhalos
 
