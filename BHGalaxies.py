@@ -1,5 +1,4 @@
- 
-# In[4]:
+#saving file
 import pynbody
 import matplotlib.pylab as plt
 plt.switch_backend("agg")
@@ -14,14 +13,14 @@ s.physical_units()
 h = s.halos()
 
 #function to find black hole
-def findBH(s):
+def findBH(snap):
     BHfilter = pynbody.filt.LowPass('tform',0.0)
-    BH = s.stars[BHfilter]
+    BH = snap.stars[BHfilter]
     return BH
 
 #function to find the halos that the galaxy is in
-def findBHhalos(s):
-    BH = findBH(s)
+def findBHhalos(snap):
+    BH = findBH(snap)
     BHhalos = BH['amiga.grp']
     return BHhalos
 
