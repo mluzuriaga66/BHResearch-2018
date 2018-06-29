@@ -1,5 +1,6 @@
 #saving file
 import pynbody
+import numpy as np 
 import matplotlib.pylab as plt
 plt.switch_backend("agg")
 
@@ -13,9 +14,9 @@ s.physical_units()
 h = s.halos()
 
 #function to find black hole
-def findBH(snap):
+def findBH(s):
     BHfilter = pynbody.filt.LowPass('tform',0.0)
-    BH = snap.stars[BHfilter]
+    BH = s.stars[BHfilter]
     return BH
 
 #function to find the halos that the galaxy is in
@@ -31,7 +32,7 @@ BHhalos = findBHhalos(s)
 print BHhalos
 
 for halo in BHhalos:
-    #halo/galaxy we need to look at is no. 2
+    #halo/galaxy we need to look 
     pynbody.analysis.angmom.faceon(h[halo])
     #defining black hole
     BH = findBH(s)
