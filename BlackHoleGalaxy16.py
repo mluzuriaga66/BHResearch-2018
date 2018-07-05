@@ -75,3 +75,4 @@ for i in currenthalo:
     distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
     #print 'this is the distance :'
     print distance
+#
