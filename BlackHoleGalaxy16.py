@@ -34,18 +34,20 @@ BHhalos = findBHhalos(s)
 print BHhalos
 
 #sorting the halos, indexes/indecis are like an exact address
-currenthalo = np.argsort(halos)
-print halos[currenthalo]
+currenthalo = np.argsort(BHhalos)
+print BHhalos[currenthalo]
 
 for i in currenthalo:
 
     #which halo are we on?
-    currenthalo = halos[i]
+    currenthalo = BHhalos[i]
     print 'current halo: ', currenthalo
 
+    print i
+    
     #put the galaxy you care about in the center of the simulation
-    pnbody.analysus.angmom.faceon(h[currenthalo])
-    with pynbody.analysis.halo.center(h[currenthalo], mode='hyb'):
+    pynbody.analysis.angmom.faceon(h[currenthalo])
+    #with pynbody.analysis.halo.center(h[currenthalo], mode='hyb'):
 
 #for halo in BHhalos:
 #    halo/galaxy we need to look at is no. 2
@@ -57,22 +59,22 @@ for i in currenthalo:
     BHposition=BH['pos']
 
     #printing the position of black hole
-    print BHposition
+    #print BHposition
 
     #putting the x-values into a column
-    BHx= BHposition[i,0]
-    print BHx
+    BHx= BHposition[[i],0]
+    print "x postion", BHx
 
     #putting the y-values into a column
-    BHy= BHposition[i,1]
-    print BHy
+    BHy= BHposition[[i],1]
+    print "y position", BHy
 
     #putting the z-values into a column
-    BHz= BHposition[i,2]
-    print BHz
+    BHz= BHposition[[i],2]
+    print "z position", BHz
 
     #the .5 is the square root , this is the distance formula
     distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
     #print 'this is the distance :'
-    print distance
+    print "this is the distance :", distance
 ##
