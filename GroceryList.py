@@ -26,20 +26,14 @@ f = open("grocerylist.txt","r")
 print f.readlines()
 
 #appending the file
-f = open("grocerylist.txt","a")
-f.write("i still don't get this")
+#f = open("grocerylist.txt","a")
+#f.write("i still don't get this")
 #f.close()
 
+#have the grocery list aka the WRITE in print out in a column
 f = open("grocerylist.txt","w")
 for i in lines_of_text:
     f.write(str(i)+'\n')
     print i
 
-#for x in f:
-#    print([i[0] for i in f])
-
-#print [column[0] for column in f]
-
-
-
-#f.close()
+f.close()
