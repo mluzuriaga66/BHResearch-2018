@@ -77,4 +77,17 @@ for i in currenthalo:
     distance =((BHx**2)+(BHy**2)+(BHz**2))**(.5)
     #print 'this is the distance :'
     print "this is the distance :", distance
-##
+
+    #printing the halo id
+    print 'this is the halo id :', currenthalo
+    
+
+    #Defining redshift aka time and printing it
+    def gettime(s):
+        return pynbody.analysis.cosmology.age(s)
+    print 'this is the redshift/time :', gettime(s)
+
+    #making the list print out in one row // this isn't working ..yet
+    f = open("HaloBHList.txt","w")
+    lines_of_text=['gettime','currenthalo','distance']
+    print lines_of_text
