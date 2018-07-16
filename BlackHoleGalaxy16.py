@@ -33,9 +33,17 @@ BHhalos = findBHhalos(s)
 #printing the halos
 print BHhalos
 
+#Defining redshift aka time and printing it                                 
+    def gettime(s):
+        return pynbody.analysis.cosmology.age(s)
+    print 'this is the redshift/time :', gettime(s)
+
 #sorting the halos, indexes/indecis are like an exact address
 currenthalo = np.argsort(BHhalos)
 print BHhalos[currenthalo]
+
+#opening the file
+f = open("HaloBHList.txt","w")
 
 for i in currenthalo:
 
@@ -81,13 +89,9 @@ for i in currenthalo:
     #printing the halo id
     print 'this is the halo id :', currenthalo
     
-
-    #Defining redshift aka time and printing it
-    def gettime(s):
-        return pynbody.analysis.cosmology.age(s)
-    print 'this is the redshift/time :', gettime(s)
-
     #making the list print out in one row // this isn't working ..yet
-    f = open("HaloBHList.txt","w")
-    lines_of_text=['gettime','currenthalo','distance']
+    lines_of_text=[gettime(s),currenthalo,distance]
     print lines_of_text
+
+#closing the file
+f.close()
