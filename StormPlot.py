@@ -17,19 +17,16 @@ i2= np.where(BHID== 243778457)
 i3= np.where(BHID== 243771992)
 
 
-#BHDistance.("]","")
-#np.char.strip(BHDistance)
-#Time= np.array(Time)
-
-#BHDistance=np.array(BHDistance)
+plt.plot(Time[i1], BHDistance[i1], label= "Galaxy16")
+plt.plot(Time[i2], BHDistance[i2], label= "Galaxy2a")
+plt.plot(Time[i3], BHDistance[i3], label= "Galaxy2b")
 
 
-#print Time
-#print BHDistance
 
-plt.plot(Time[i1], BHDistance[i1])
-plt.plot(Time[i2], BHDistance[i2])
-plt.plot(Time[i3], BHDistance[i3])
+plt.legend()
+
+#(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,
+#           ncol=2, mode="expand", borderaxespad=0.)
 
 plt.ylabel("BH Distance 'Kpc'")
 plt.xlabel("Time 'Gyr'")
